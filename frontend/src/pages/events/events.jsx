@@ -1,14 +1,14 @@
 import { Helmet } from 'react-helmet';
 
-const Login = () => {
+const Events = () => {
     return (
         <>
             <Helmet>
-                <title>Login</title>
+                <title>Events</title>
             </Helmet>
-            <div>Login Page</div>
+            <div>Events Page</div>
         </>
     )
 }
 
-export default Login;
+export default Events;
