@@ -1,0 +1,11 @@
+{
+  "name": "the-coders",
+  "version": "1.0.0",
+  "description": "The Coders",
+  "main": "",
+  "scripts": {
+    "test": ""
+  },
+  "author": "Bryan Christy",
+  "license": "ISC"
+}
