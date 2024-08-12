@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const dbconn = require('./config/dbconn');
 
 const app = express();
 
@@ -34,6 +35,16 @@ app.use('/user/', user);
 app.use('/test/', testMethod)
 app.use('/verify/', verification)
 
-app.listen(port, () => {
-    console.log("Server running on port", port);
-});
+// DB Connection and App port listen
+const start = async () => {
+    await dbconn().then(() => {
+        console.log('Connecting to DB and starting server');
+        app.listen(port, () => {
+            console.log("Server running on port", port);
+        });
+    }).catch((e) => {
+        console.log(e);
+    })
+}
+
+start();
